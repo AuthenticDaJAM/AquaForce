@@ -27,6 +27,6 @@ Route::middleware([
 // Middleware para la búsqueda de dispositivos
 Route::middleware(['auth'])->group(function () {
     Route::get('/devices', [DeviceController::class, 'index'])->name('devices');
+    Route::get('/devices/{device_id}/config', [DeviceController::class, 'showConfig'])->name('devices.config');
 });
 
-Route::get('/devices/{device_id}/config', [DeviceController::class, 'showConfig'])->name('devices.config');
